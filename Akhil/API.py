@@ -1,11 +1,12 @@
 import requests
 import json
 import pprint
-url = "http://worldtimeapi.org/api/timezone/America/Argentina/Salta"
-params = {'area' : 'America',
-        'location' :'argentina' 
+url = "http://worldtimeapi.org/api/timezone/Asia/Kolkata"
+params = {'area' : 'Asia',
+        'location' :'kolkata' 
         }
 response = requests.get(url,params)
+print(response.url)    
 if response.status_code == 200:
     data = json.loads(response.text)
     #pprint.print(data)
@@ -13,3 +14,4 @@ if response.status_code == 200:
     print("The time zone is",Time)
 else:
     print(f"Error: {response.status_code}")
+
